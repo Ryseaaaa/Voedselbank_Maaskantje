@@ -1,0 +1,82 @@
+PROJECT REQUIREMENTS
+
+-doelgroep bijhouden voor zowel klant als pakket
+-houdbaarheidsdatum voor producten
+
+-applicatie is uitsluitend voor medewerkers van de voedselbank
+
+-aantal producten in magazijn bijhouden
+-bijhouden welke leveranciers producten leveren en wanneer de volgende levering is
+-voedselpakketten samenstellen op basis van: 
+	-aantal producten in magazijn
+	-gezinsamenstelling en wensen van de klant
+-beheren van klanten (gezinnen die pakketten afnemen)
+
+
+Minimum vereisten:
+
+1. Leveranciers
+	a. Beheer van leveranciers:
+		-Invoeren, bewerken, verwijderen, en wijzigen; Startend vanuit een overzicht van de leveranciers
+		-Van leveranciers moet het volgende worden opgeslagen; Bedrijfsnaam, Adres, Naam & Email van contactpersoon, Telefoonnummer, Informatie over eerstvolgende levering (datum, tijd)
+
+2. Voorraadbeheer
+	a. Beheer van magazijnvoorraad:
+		-Invoeren van nieuwe producten, wijzigen van productgegevens en aantallen producten
+		-Al eerder in een voedselpakket opgenomen producten mogen niet verwijderd kunnen worden (Dus ik neem aan dat er een bool moet komen om te laten zien dat het al gebruikt is)
+	b. Productvoorraadoverzicht:
+		-Om te voorkomen dat dubbele producten worden toegevoegd in de applicatie, moet in het productoverzicht kunnen gesoorteerd worden op alle toonbare eigenschappen.
+		-Ook moet het mogelijk zijn om te zoeken op basis van streepjescode
+
+3. Voedselpaketten
+	a. Samenstellen voedselpakket voor een klant:
+		-Een nieuw voedselpakket moet automatisch worden doorgenummerd, en heeft een datum van samenstelling en datum van uitgifte.
+		-Elk voedselpakket is altijd voor maar één specifieke klant bedoeld.
+
+4. Klanten
+	a. Beheer van klanten 
+		-Bijhouden van (gezins-)naam, adres, telefoon, en email.
+		-Bijhouden van klant-specifieke wensen en gezinssamenstelling 
+	b. Bekijken vaan overzicht
+		-Alle afgenomen voedselpakketten moeten te bekijken zijn
+		-Voor elk voedselpakket moeten de producten en aantallen beschikbaar zijn.
+
+================================================================================================================================
+
+ERD
+
+	Tabellen
+
+Producten
+Magazijnvoorraad
+Klanten
+Voedselpakketten
+Leveranciers
+
+================================================================================================================================
+
+Users
+
+	User soorten
+
+Directie 
+	-Beheert klanten en leveraniers
+	-Heeft toegang tot alles
+
+Magazijnmedewerker 
+	-Heeft alleen toegang tot voorraad en leveranciers
+
+Vrijwilliger die voedselpakketten samenstelt 
+	-Stelt voedselpaketten samen, bekijkt voorraad
+	-Kan geen producten beheren, maar kan wel voorraadantallen wijzigen door het samenstellen van  voedselpaketten
+
+
+User Stories
+-Als een gebruiker, wil ik mijn wachtwoord kunnen wijzigen, zodat ik mijn account veilig kan houden
+-Als de directie, wil ik alle pagina's kunnen zien, zodat ik een overzicht heb van wat er gebeurt.
+
+================================================================================================================================
+Notes
+
+ProductID == EAN
+(EAN is al een unique identifier voor alle europese producten)
