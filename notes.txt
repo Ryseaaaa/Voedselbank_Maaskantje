@@ -72,8 +72,18 @@ Vrijwilliger die voedselpakketten samenstelt
 
 
 User Stories
--Als een gebruiker, wil ik mijn wachtwoord kunnen wijzigen, zodat ik mijn account veilig kan houden
--Als de directie, wil ik alle pagina's kunnen zien, zodat ik een overzicht heb van wat er gebeurt.
+-Als gebruiker, wil ik mijn wachtwoord kunnen wijzigen, zodat ik mijn account veilig kan houden
+
+-Als directie, wil ik toegang tot alle pagina's, zodat ik een overzicht heb van alles.
+-Als directie, wil ik alle gebruikersgegevens kunnen zien en aanpassen, zodat ik controle heb over alle gebruikers.
+-Als directie, wil ik alle klantgegevens kunnen zien en bewerken
+
+-Als magazijnmedewerker, wil ik de voorraad kunnen zien en aanpassen, zodat ik het magazijn kan onderhouden.
+-Als magazijnmedewerker, wil ik alle informatie kunnen zien over de leveranciers, zodat ik het magazijn kan voorbereiden op nieuwe leveringen.
+
+-Als vrijwilliger, wil ik nieuwe voedselpakketten kunnen maken, zodat deze doorgegeven kunnen worden aan de klanten.
+-Als vrijwilliger, wil ik producten in een voedselpakket kunnen toevoegen, aanpassen, en verwijderen, zodat ik mogelijke fouten can corrigeren.
+-Als vrijwilliger, wil ik de voorkeuren en vereisten van klanten kunnen inzien, zodat ik gepersonaliseerde voedselpakketten kan maken.
 
 ================================================================================================================================
 Notes
