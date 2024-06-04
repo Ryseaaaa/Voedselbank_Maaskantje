@@ -72,6 +72,7 @@ Vrijwilliger die voedselpakketten samenstelt
 
 
 User Stories
+-Als gebruiker, wil ik moeten inloggen, zodat niemand anders toegang heeft tot de gegevens.
 -Als gebruiker, wil ik mijn wachtwoord kunnen wijzigen, zodat ik mijn account veilig kan houden
 
 -Als directie, wil ik toegang tot alle pagina's, zodat ik een overzicht heb van alles.
