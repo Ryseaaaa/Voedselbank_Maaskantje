@@ -7,9 +7,6 @@
   <?php include("common/styles.php"); ?>
 </head>
 <body>
-<<<<<<< Updated upstream:login.php
-  <?php include("common/navbar.php"); ?>
-=======
   <?php 
   session_start();
 
@@ -45,7 +42,6 @@
   
   
   ?>
->>>>>>> Stashed changes:account.php
   <div>login</div>
   
 </body>
