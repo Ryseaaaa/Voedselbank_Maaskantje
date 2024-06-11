@@ -7,10 +7,11 @@
   <?php include("common/styles.php");?>
 </head>
 <body>
-  <?php 
+  <?php
+  session_start();
   include("common/navbar.php");
   if($_SESSION["loggedIn"] != true){
-    header("location:login.php");
+    header("location: account.php");
   }
   ?>
 
