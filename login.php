@@ -7,7 +7,37 @@
   <?php include("common/styles.php"); ?>
 </head>
 <body>
-  <?php include("common/navbar.php"); ?>
+  <?php 
+  session_start();
+
+  include("common/navbar.php"); 
+
+  print_r($_POST);
+
+  if(isset($_POST["submit"]) && $_POST["submit"] == "Login"){
+    $username = "UWU";
+    $password = "OWO";
+
+    if($_POST["username"] == $username && $_POST["password"] == $password ){
+      $_SESSION["username"] = $username;
+      $_SESSION["password"] = $password;
+      $_SESSION["loggedIn"] = true;
+    }else{
+      session_destroy();
+      header("location:login.php");
+      exit();
+    }
+  }
+
+  if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true){
+    include("login/account.php");
+  }else{
+    include("login/loginform.php");
+  }
+
+  
+  
+  ?>
   <div>login</div>
   
 </body>
