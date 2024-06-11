@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Account</title>
   <?php include("common/styles.php"); ?>
 </head>
 <body>
+<<<<<<< Updated upstream:login.php
+  <?php include("common/navbar.php"); ?>
+=======
   <?php 
   session_start();
 
@@ -14,9 +17,11 @@
 
   print_r($_POST);
 
+
+  //POST login
   if(isset($_POST["submit"]) && $_POST["submit"] == "Login"){
-    $username = "UWU";
-    $password = "OWO";
+    $username = "user";
+    $password = "pass";
 
     if($_POST["username"] == $username && $_POST["password"] == $password ){
       $_SESSION["username"] = $username;
@@ -29,15 +34,18 @@
     }
   }
 
+
+  //login validation
   if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true){
     include("login/account.php");
   }else{
-    include("login/loginform.php");
+    include("login/login.php");
   }
 
   
   
   ?>
+>>>>>>> Stashed changes:account.php
   <div>login</div>
   
 </body>
