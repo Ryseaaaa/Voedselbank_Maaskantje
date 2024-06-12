@@ -13,46 +13,48 @@
   pointer-events: all;
 }
 
-ul {
+.nav-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 
-  background-color: #190e42;
-  border-bottom: 2px solid #383157;
+  background-color: #e99a24;
+  border-bottom: 2px solid #ffe083;
 }
 
-li {
+.nav-item {
   float: left;
-  border-right: 2px solid #383157;
+  border-right: 2px solid #ffe083;
 }
 
-li a {
+.nav-item a {
   display: block;
   padding: 14px 16px;
 
-  color: rgb(187, 255, 238);
+  color: #464196;
   text-decoration: none;
 }
 
 li a {
-  transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 li a:hover:not(.nav-selected a) {
   background-color: #383157;
+  color: #ffe083;
 }
 
 .nav-selected a {
   background-color: #110931;
+  color: #ffe083;
   cursor: default;
 }
 
-li:last-child {
+.nav-item:last-child {
   float: right;
   border-right: none;
-  border-left: 2px solid #383157;
+  border-left: 2px solid #ffe083;
 }
 
 .nav-margin {
