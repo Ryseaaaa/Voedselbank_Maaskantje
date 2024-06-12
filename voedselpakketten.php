@@ -7,7 +7,12 @@
   <?php include("common/styles.php"); ?>
 </head>
 <body>
-  <?php include("common/navbar.php"); ?>
+  <?php 
+  session_start();
+  
+  include("common/navbar.php"); 
+  include("login/loginvalidation.php");
+  ?>
   <div>voedsel</div>
   
 </body>

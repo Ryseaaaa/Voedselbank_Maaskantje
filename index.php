@@ -10,9 +10,8 @@
   <?php
   session_start();
   include("common/navbar.php");
-  if($_SESSION["loggedIn"] != true){
-    header("location: account.php");
-  }
+  include("login/loginvalidation.php");
+  //include("login/account.php");
   ?>
 
   <div>

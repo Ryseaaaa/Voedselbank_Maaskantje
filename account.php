@@ -26,18 +26,27 @@
       $_SESSION["loggedIn"] = true;
     }else{
       session_destroy();
-      header("location:login.php");
+      header("location:account.php");
       exit();
     }
+
+    //when logging in
+    
   }
 
-
-  //login validation
-  if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true){
-    include("login/account.php");
+  if((isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) != true){
+    session_unset();
+    session_destroy();
+    include("login/loginform.php");
   }else{
-    include("login/login.php");
+    include("login/account.php");
   }
+
+
+
+
+
+
 
   
   
