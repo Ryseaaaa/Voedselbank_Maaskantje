@@ -1,6 +1,6 @@
 <?php
-if(isset($_SESSION["loginerror"])){
-  echo("<p>Er ging iets mis: ".$_SESSION["loginerror"]."</p>");
+if(isset($_SESSION["loginError"])){
+  echo("<p>Er ging iets mis: ".$_SESSION["loginError"]."</p>");
 }
 ?>
 
