@@ -27,10 +27,14 @@
         include("gebruikersbeheer/add.php");
         break;
 
+      case "delete":
+        include("gebruikersbeheer/delete.php");
+        break;
+
       case "processing":
         include("gebruikersbeheer/processing.php");
         break;
-        
+
       default:
         header("location: gebruikersbeheer.php");
         break;
