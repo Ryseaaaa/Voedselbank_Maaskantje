@@ -7,6 +7,10 @@
     case "Gebruiker Toevoegen":
       addUser();
       break;
+
+    case "Gebruiker Verwijderen":
+      deleteUser();
+      break;
     
     default:
       echo("Something went wrong");
@@ -32,6 +36,22 @@
     $stmt->bindParam(':Password', $password);
     $stmt->bindParam(':Role', $role);
     $stmt->execute();
+
+    echo("yay?");
+
+  }
+
+  function deleteUser(){
+    include("database/dhb.php");
+
+    $userID = $_POST["user"];
+
+    // $stmt = $dhb->prepare("INSERT INTO User (Username, Password, Role) VALUES (?, ?, ?)");
+    // $stmt->bind_param("ssi", $username, $password, $role);
+    // $stmt->execute();
+    
+    $query = "DELETE FROM `user` WHERE UserID = $userID";
+    $dhb->query($query);
 
     echo("yay?");
 
