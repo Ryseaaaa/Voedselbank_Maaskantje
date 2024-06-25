@@ -35,6 +35,11 @@
         include("gebruikersbeheer/processing.php");
         break;
 
+      case "edit":
+      case "Bewerken":
+        include("gebruikersbeheer/edit.php");
+        break;
+
       default:
         header("location: gebruikersbeheer.php");
         break;

@@ -4,6 +4,7 @@
   echo("display");
 
   include("database/dhb.php");
+  include("functions.php");
   //list password
   $query = "SELECT * FROM `user`";
 
@@ -39,7 +40,7 @@
         echo("<td>".$value."</td>");
       }
       if($property == "Role"){
-        echo("<td>".$value."</td>");
+        echo("<td>".roletostring($value)."</td>");
       }
       
     }
