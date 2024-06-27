@@ -1,0 +1,35 @@
+footer {
+    background-color: #e99a24;
+    padding: 50px;
+    /* font-size: 80%; */
+  }
+  
+  .voedselbank-info{
+    list-style: none;
+    float: right;
+  }
+  
+  .footer-nav li a:hover,
+  .footer-nav li a:active,
+  .voedselbank-info li a:hover,
+  .voedselbank-info li a:active {
+    color: #ffe083;
+  }
+   
+  footer p {
+    color: #464196;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 20px;
+  }
+  
+  footer p:hover,
+  footer p:active {
+    color: #ffe083;
+  }
+
+  .footer-list-item {
+    color: #464196;
+
+  }
+  

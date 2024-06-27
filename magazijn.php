@@ -1,91 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php include("common/styles.php");?>
-  <title>Voedselbank Maaskantje</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include("common/styles.php")?>
+    <title>Product Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
 <?php
         session_start();
         include("common/navbar.php");
-        if($_SESSION["loggedIn"] != true){
-          header("location: account.php");
-        }
+        // if($_SESSION["loggedIn"] != true){
+        //   header("location: account.php");
+        // }
 ?>
-  <header class="header">
-    <div class="header-container">
-        <img class="logo" alt="logo" src="images/logo_voedselbank.png"/>
-        <span class="header-name" href="index.php">Voedselbank Maaskantje</span>
-    </div>
-  </header>
+<?php include("common/header.php");?>
 
   <main>
-    <section class="section-magazijn">
+    <div class="section-magazijn">
       <h1 class="inventory margin-right-md">Voorraad Beheer</h1><br>
-        <div class="categorie-container grid grid--3-cols">
-            <?php
-          $categories = [
-            'Categorie 1 (AGF)' => [
-              'items' => ['Iets Kruimige Aardappelen' => 26, 'Spinazie' => 18, 'Bananen' => 12],
-            ],
-            'Categorie 2 (Kaas, Vleeswaren)' => [
-              'items' => ['30+ Jong Belegen Plakken Kaas' => 32, 'Kipfilet' => 18, 'Gehakt (varken)' => 14],
-            ],
-            'Categorie 3 (Zuivel, plantaardig, eieren)' => [
-              'items' => ['12 stuks eieren (M)' => 25, 'Halfvolle Melk (1L)' => 34, 'Halvarine 500G' => 15],
-            ],
-            'Categorie 4 (Bakkerij en Banket)' => [
-              'items' => ['Volkoren brood' => 14, 'Sesamvolkoren half' => 23, 'Eierkoek' => 14],
-            ],
-            'Categorie 5 (Frisdrank, Sappen, Koffie en Thee)' => [
-              'items' => ['Engels Melange' => 18, 'Cola Zero' => 27, 'Perziknectar' => 15],
-            ],
-            'Categorie 6 (Pasta, Rijst en Wereldkeuken)' => [
-              'items' => ['Knorr Curry Madras' => 26, 'Zilvervliesrijst (500g)' => 34, 'Penne Rigate' => 29],
-            ],
-            'Categorie 7 (Soepen, sauzen, kruiden en olie)' => [
-              'items' => ['Zonnebloemolie' => 47, 'Heinz Tomatenketchup' => 28, 'Dille' => 19],
-            ],
-            'Categorie 8 (Snoep, koek, chips en chocolade)' => [
-              'items' => ['Spritzkoeken' => 16, 'Winegums' => 24, 'Croky Paprikachips' => 32],
-            ],
-            'Categorie 9 (Baby, verzorging en hygiëne)' => [
-              'items' => ['Babydoekjes' => 9, 'Pampers' => 14, 'Deodorant' => 23],
-            ],
-          ];
+      <button type="button" id="addProductButton" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal">
+      + Add Product
+      </button>
 
-          foreach ($categories as $category => $data) {
-            echo '<div class="container-list margin-right-sm">';
-            echo '<select class="sorteren">';
-            echo 'option value="sorteren">Sorteren</option>';
-            echo '</select>';
-            echo '<ul class="categorie-list"><b>' . $category . ':</b>';
-            foreach ($data['items'] as $item => $quantity) {
-              echo '<li class="bulleted-list">' . $item . ':' . $quantity . '</li>';
-            }
-            echo '</ul></div>';
-          }
-            ?>
+      <!-- Modal Structure -->
+       <div class="modal" id="addProductModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+               <div class="modal-header">
+                  <h4 class="modal-title">Add New Product</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times</button>
+               </div>
+               <!-- Modal Body -->
+                <div class="modal-body">
+                  <form action="Productbeheer/add_product.php" method="post">
+                    <div class="form-group">
+                        <label for="ProductID">EAN Code:</label>
+                        <input type="text" class="form-control" id="ProductID" name="ProductID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductNaam">Product Naam:</label>
+                        <input type="text" class="form-control" id="ProductNaam" name="ProductNaam" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Aantal">Aantal:</label>
+                        <input type="text" class="form-control" id="Aantal" name="Aantal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CatogorieFID">Categorie:</label>
+                        <select class="form-control" id=CatogorieFID" name="CatogorieFID" required>
+                          <option value="1">Categorie 1 (AGF)</option>
+                          <option value="2">Categorie 2 (Kaas,Vleeswaren)</option>
+                          <option value="3">Categorie 3 (Zuivel,plantaardig en eieren)</option>
+                          <option value="4">Categorie 4 (Bakkerij en banket)</option>
+                          <option value="5">Categorie 5 (Frisdrank,sappen,koffie en thee)</option>
+                          <option value="6">Categorie 6 (Pasta, rijs en wereldkeuken)</option>
+                          <option value="7">Categorie 7 (Soepen,sauzen,kruiden, olie)</option>
+                          <option value="8">Categorie 8 (Snoep, koek, chips en chocolade)</option>
+                          <option value="9">Categorie 9 (Baby, verzorging en hygiëne)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                  </form>
+                </div>
+            </div>
+          </div>
+       </div>
+       <!-- Product List -->
+        <div class="inventory">
+          <h2>Current Products</h2>
+          <div id="product-list">
+              <?php
+              include 'productbeheer/fetch_product.php';
+              ?>
+          </div>
         </div>
+      </div>
+      <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </section>
   </main>
-  <footer>
-    <div class="grid--2-cols">
-        <ul class="voedselbank-info">
-            <li class="footer-list-item">Voedselbank Maaskantje en Regionaal</li>
-            <li class="footer-list-item">Distributiecentrum</li>
-            <li class="footer-list-item">Archangelkade 11 5271 XV Amsterdam</li>
-            <li class="footer-list-item">E: info.maaskantje@voedselbank.org</li>
-            <li class="footer-list-item">T: 020-63877</li>
-        </ul>
-    </div>
-    <div class="row">
-    <p>Stichting Voedselbank Maaskantje wordt door de belastingdienst aangemerkt als ANBI (Algemeen Nut Beogende Instelling) met RSIN 814542499.
-    IBAN: NL49 INGB 0004237650</p>
-    </div>
-  </footer>
-  
+
+    <!-- script voor sorteren -->
+     <script>
+      document.querySelectorAll('.sort-dropdown').forEach(dropdown => {
+        dropdown.addEventListener('change', function() {
+          const sortOption = this.value;
+          const url = new URL(window.location.href);
+          if (sortOption === 'none') {
+            url.searchParams.delete('sort');
+          } else {
+          url.searchParams.set('sort', sortOption);
+          }
+          window.location.href = url.toString();
+        });
+      });
+     </script>
 </body>
 </html>
+
+
+    
