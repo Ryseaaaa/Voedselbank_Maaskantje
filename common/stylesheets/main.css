@@ -284,14 +284,14 @@ body {
     flex-direction: column;
 }
 
-input[type=text], [type=password]{
-    display: block;
-    border: 3px solid #ffe083;
-    width: 95%;
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 5px;
-}
+/*input[type=text], [type=password]{*/
+/*    display: block;*/
+/*    border: 3px solid #ffe083;*/
+/*    width: 95%;*/
+/*    padding: 10px;*/
+/*    margin: 10px auto;*/
+/*    border-radius: 5px;*/
+/*}*/
 
 label {
     color: #ffe38f;
