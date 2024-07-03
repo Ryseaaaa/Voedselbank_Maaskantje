@@ -5,12 +5,8 @@
       addKlant();
       break;
 
-    case "Gebruiker Verwijderen":
-      deleteUser();
-      break;
-
-    case "Gebruiker Bewerken":
-      editUser();
+    case "Klant Bewerken":
+      editKlant();
       break;
     
     default:
@@ -30,7 +26,7 @@
     foreach ($_POST as $key => $value) {
       $$key = $value;
     }
-    
+
     $id = $dhb->query("SELECT MAX(KlantID) FROM Klant")->fetch()[0] + 1;
 
 
@@ -72,58 +68,43 @@
 
   }
 
-  function deleteUser(){
+  function editKlant(){
+
+
     include("database/dhb.php");
 
-    $userID = $_POST["user"];
+      $id = $_POST["id"];
+      $gezinsNaam = $_POST["gezinsNaam"];
+      $adres = $_POST["adres"];
+      $telefoonnummer = $_POST["telefoonnummer"];
+      $email = $_POST["email"];
+      $aantalVolwassenen = $_POST["aantalVolwassenen"];
+      $aantalKinderen = $_POST["aantalKinderen"];
+      $aantalBabys = $_POST["aantalBabys"];
+      $extraInformatie = $_POST["extraInformatie"];
+      $isGedeactiveerd = isset($_POST["isGedeactiveerd"]);
 
-    // $stmt = $dhb->prepare("INSERT INTO User (Username, Password, Role) VALUES (?, ?, ?)");
-    // $stmt->bind_param("ssi", $username, $password, $role);
-    // $stmt->execute();
-    
-    $query = "DELETE FROM `user` WHERE UserID = $userID";
-    $dhb->query($query);
 
-    echo("yay?");
 
-  }
-
-  function editUser(){
-    include("database/dhb.php");
-
-    $uid = $_POST["uid"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $role = $_POST["role"];
-
-    
-    checkUsername($username, $uid);
-
-    // $stmt = $dhb->prepare("INSERT INTO User (Username, Password, Role) VALUES (?, ?, ?)");
-    // $stmt->bind_param("ssi", $username, $password, $role);
-    // $stmt->execute();
-
-    $dhb -> query("UPDATE `User` SET `Username`=\"$username\" WHERE UserID=$uid");
-    $dhb -> query("UPDATE `User` SET `Password`=\"$password\" WHERE UserID=$uid");
-    $dhb -> query("UPDATE `User` SET  `Role`=\"$role\" WHERE UserID=$uid");
+    try {
+      $dhb -> query("UPDATE `Klant` SET `GezinsNaam`=\"$gezinsNaam\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `Adres`=\"$adres\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `Telefoonnummer`=\"$telefoonnummer\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `Email`=\"$email\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `AantalVolwassenen`=\"$aantalVolwassenen\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `AantalKinderen`=\"$aantalKinderen\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `AantalBabys`=\"$aantalBabys\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `ExtraInformatie`=\"$extraInformatie\" WHERE KlantID=$id");
+      $dhb -> query("UPDATE `Klant` SET `isGedeactiveerd`=\"".($isGedeactiveerd ? 1 : 0)."\" WHERE KlantID=$id");
+      echo("edited succesfully?");
+    } catch (Exception $e) {
+      echo($e);
+    }
     
 
-    echo("edited succesfully?");
+
 
   }
   
-  function checkUsername($username, $uid){
-    if(!isset($uid)){
-      $uid = -1;
-    }
-    include("database/dhb.php");
-    $users = $dhb -> query("SELECT `Username` FROM `User` WHERE `Username` = \"$username\" AND NOT `UserID` = $uid ") -> fetch();
-
-    if(gettype($users) != "boolean"){
-      $error = "Gebruiker bestaat al";
-      include("gebruikersbeheer/error.php");
-      exit;
-    }
-  }
 
 ?>

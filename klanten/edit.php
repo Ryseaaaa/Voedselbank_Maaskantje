@@ -1,10 +1,10 @@
 <?php
 //check if account is selected
-  if(!isset($_GET["uid"])){
+  if(!isset($_GET["id"])){
     echo("none selected");
-    include("edit/selectuser.php");
+    include("edit/selectklant.php");
   }else{
-    echo("account ".$_GET["uid"]."selected");
-    include("edit/edituser.php");
+    echo("account met ID ".$_GET["id"]." geselecteerd");
+    include("edit/editklant.php");
   }
 ?>
