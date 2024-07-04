@@ -11,7 +11,39 @@
   session_start();
   include("login/loginvalidation.php");
   include("common/navbar.php");
-  echo("klanten");
+
+  //if theres a display type in $_GET
+  if(isset($_GET["displaytype"])){
+    //first make sure theres a way to return
+    echo("<p><a href=\"klanten.php\">Terug naar keuzemenu</a></p>");
+
+    //then display requested display type
+    switch ($_GET["displaytype"]) {
+      case "display":
+        include("klanten/display.php");
+        break;
+
+      case "add":
+        include("klanten/add.php");
+        break;
+
+      case "edit":
+      case "Bewerken":
+        include("klanten/edit.php");
+        break;
+
+      case "processing":
+        include("klanten/processing.php");
+        break;
+
+      default:
+        header("location: klanten.php");
+        break;
+    }
+
+  }else{
+    include("klanten/ask.php");
+  }
   ?>
 
 </body>

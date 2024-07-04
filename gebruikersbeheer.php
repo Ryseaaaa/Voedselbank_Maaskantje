@@ -15,7 +15,7 @@
   //if theres a display type in $_GET
   if(isset($_GET["displaytype"])){
     //first make sure theres a way to return
-    echo("<p><a href=\"gebruikersbeheer.php\">Terug naar selectie</a></p>");
+    echo("<p><a href=\"gebruikersbeheer.php\">Terug naar keuzemenu</a></p>");
 
     //then display requested display type
     switch ($_GET["displaytype"]) {
@@ -27,12 +27,13 @@
         include("gebruikersbeheer/add.php");
         break;
 
-      case "delete":
-        include("gebruikersbeheer/delete.php");
-        break;
-
       case "processing":
         include("gebruikersbeheer/processing.php");
+        break;
+
+      case "edit":
+      case "Bewerken":
+        include("gebruikersbeheer/edit.php");
         break;
 
       default:

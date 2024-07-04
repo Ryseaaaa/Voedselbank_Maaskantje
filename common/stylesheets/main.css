@@ -171,46 +171,6 @@ body {
   strong {
       font-weight: 500;
   }
-/****************************/
-/* HEADER */
-/****************************/
-.header-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: #171516;
-    transition: color
-  }
-  
-  
-  .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    background: #e99a24;
-    /* background-color: #; */
-      height: 9.6rem;
-      padding: 0 4.8rem;
-  }
-  
-  .header-name {
-    font-size: 2.2rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-  
-  .header-name:hover,
-  .header-name:active {
-    color: #ffe083;
-  }
-  
-  .logo {
-      height: 9.2rem;
-      width: 9.6rem;
-      border: 1px solid #ffe083;
-      border-radius: 50px;
-      margin-right: 2.4rem; 
-  }
 
   /****************************/
   /* ABOUT US SECTION (INDEX.HTML) */
@@ -237,12 +197,12 @@ body {
     opacity: 0.8;
 }
 
-.about-us-text-box {
+    .about-us-text-box {
        padding: 9.6rem;
 
-}
+    }
 
-.short-description {
+  .short-description {
     font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 4.8rem;
@@ -319,6 +279,7 @@ label {
 .button-form:hover{
 
     background-color: #9d6ab9;
+    transform: scale(1.1);
     transition: all 0.3s;
 
 }
@@ -343,7 +304,7 @@ span.forgot-psw {
  
  }
 
-   /****************************/
+/****************************/
 /* MAGAZIJN.HTML (voorraad site) */
 /****************************/
 
@@ -390,45 +351,61 @@ span.forgot-psw {
   position: absolute;
 }
 
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px; 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#addProductButton {
+  margin-bottom: 20px;
+  margin-left: 28px;
+}
+
+.sort {
+  margin-bottom: 10px;
+}
+
+.category-box {
+  border: 2px solid #F0e68c;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.sort-dropdown {
+  margin-bottom: 10px;
+}
 
 
-
-  /****************************/
-/* FOOTER */
-/****************************/
-footer {
-    background-color: #e99a24;
-    padding: 50px;
-    /* font-size: 80%; */
-  }
-  
-  .voedselbank-info{
-    list-style: none;
-    float: right;
-  }
-  
-  .footer-nav li a:hover,
-  .footer-nav li a:active,
-  .voedselbank-info li a:hover,
-  .voedselbank-info li a:active {
-    color: #ffe083;
-  }
-   
-  footer p {
-    color: #464196;
-    text-align: center;
-    font-size: 90%;
-    margin-top: 20px;
-  }
-  
-  footer p:hover,
-  footer p:active {
-    color: #ffe083;
-  }
-
-  .footer-list-item {
-    color: #464196;
-
-  }
   
   
