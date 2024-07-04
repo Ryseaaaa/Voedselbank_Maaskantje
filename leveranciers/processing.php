@@ -56,7 +56,7 @@
     // $stmt->bind_param("ssi", $username, $password, $role);
     // $stmt->execute();
     
-    $query = "DELETE FROM `user` WHERE UserID = $userID";
+    $query = "DELETE FROM `leverancier` WHERE UserID = $userID";
     $dhb->query($query);
 
     echo("yay?");

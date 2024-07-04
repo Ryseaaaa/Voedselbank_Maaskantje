@@ -21,6 +21,9 @@
             case "display":
                 include("leveranciers/display.php");
                 break;
+            case "delete":
+                include("leveranciers/delete.php");
+                break;
             case "add":
                 include("leveranciers/add.php");
                 break;
