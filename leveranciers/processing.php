@@ -30,11 +30,15 @@
     $phone = $_POST["telefoon"];
     $date = $_POST["date"];
 
+    $id = $dhb->query("SELECT MAX(KlantID) FROM Klant")->fetch()[0] + 1;
+    if(gettype($id) != "int") $id = 0; 
+
     // $stmt = $dhb->prepare("INSERT INTO User (Username, Password, Role) VALUES (?, ?, ?)");
     // $stmt->bind_param("ssi", $username, $password, $role);
     // $stmt->execute();
-    $stmt = $dhb->prepare("INSERT INTO  leverancier (Bedrijfsnaam, Adres, ContactNaam, Email, Telefoon, VolgendeLevering)
-    VALUES (:NaamBedrijf, :Adres, :ContactPersoon, :Email, :Phone, :Date)");
+    $stmt = $dhb->prepare("INSERT INTO  leverancier (LeverancierID, Bedrijfsnaam, Adres, ContactNaam, Email, Telefoon, VolgendeLevering)
+    VALUES (:LeverancierID, :NaamBedrijf, :Adres, :ContactPersoon, :Email, :Phone, :Date)");
+    $stmt->bindParam(':LeverancierID', $id);
     $stmt->bindParam(':NaamBedrijf', $naamBedrijf);
     $stmt->bindParam(':Adres', $adres);
     $stmt->bindParam(':ContactPersoon', $persoon);
@@ -50,13 +54,13 @@
   function deleteUser(){
     include("database/dhb.php");
 
-    $userID = $_POST["user"];
+    $leverancierID = $_POST["leverancier"];
 
     // $stmt = $dhb->prepare("INSERT INTO User (Username, Password, Role) VALUES (?, ?, ?)");
     // $stmt->bind_param("ssi", $username, $password, $role);
     // $stmt->execute();
     
-    $query = "DELETE FROM `leverancier` WHERE UserID = $userID";
+    $query = "DELETE FROM `leverancier` WHERE LeverancierID = $leverancierID";
     $dhb->query($query);
 
     echo("yay?");
