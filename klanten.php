@@ -9,6 +9,10 @@
 <body>
 <?php
   session_start();
+
+  $currentPage = "klanten";
+  include("./inlogCheck.php");
+
   include("login/loginvalidation.php");
   include("common/navbar.php");
 

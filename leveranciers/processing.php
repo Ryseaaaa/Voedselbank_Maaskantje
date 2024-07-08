@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+$currentPage = "klanten";
+require("inlogCheck.php");
   //include dhb
   
 

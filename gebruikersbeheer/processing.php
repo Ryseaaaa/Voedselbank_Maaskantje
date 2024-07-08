@@ -1,4 +1,8 @@
 <?php
+session_start();
+$currentPage = "klanten";
+require("inlogCheck.php");
+
   //Determine what to do
   switch ($_POST["type"]) {
     case "Gebruiker Toevoegen":

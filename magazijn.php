@@ -10,10 +10,8 @@
 <body>
 <?php
         session_start();
-        include("common/navbar.php");
-        // if($_SESSION["loggedIn"] != true){
-        //   header("location: account.php");
-        // }
+$currentPage = "magazijn";
+include("./inlogCheck.php");
 ?>
 <?php include("common/header.php");?>
 

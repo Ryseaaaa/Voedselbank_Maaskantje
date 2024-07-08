@@ -1,5 +1,10 @@
 <?php
-  //Determine what to do
+
+session_start();
+$currentPage = "klanten";
+require("inlogCheck.php");
+
+//Determine what to do
   switch ($_POST["type"]) {
     case "Klant Toevoegen":
       addKlant();

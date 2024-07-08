@@ -9,6 +9,9 @@
 <body>
   <?php 
   session_start();
+  // checks if logged in user is actually the correct role, if not it sends back the user to index
+  $currentPage = "voedselpaketten";
+  include("./inlogCheck.php");
   
   include("common/navbar.php"); 
   include("login/loginvalidation.php");

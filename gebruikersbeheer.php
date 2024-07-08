@@ -9,6 +9,9 @@
 <body>
   <?php
   session_start();
+  $currentPage = "gebruikers";
+  include("./inlogCheck.php");
+
   include("login/loginvalidation.php");
   include("common/navbar.php");
 
