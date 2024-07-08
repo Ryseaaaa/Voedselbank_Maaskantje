@@ -4,7 +4,7 @@ if((isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) != true){
     session_destroy();
     session_start();
     $_SESSION["loginError"] = "You are not logged in";
-    header("location: account.php");
+    header("location: index.php");
     exit();
 }
 

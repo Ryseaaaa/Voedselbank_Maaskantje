@@ -27,6 +27,7 @@ try {
     if(isset($ResultI[0]) && $ResultI[0]["Password"] == $_POST["pass"]) {
         $_SESSION["user"] = $_POST["username"];
         $_SESSION["role"] = $ResultI[0]["Role"];
+        $_SESSION["loggedIn"] = true;
 
         print_r($_SESSION["role"]);
         header("Location: ./index.php");
