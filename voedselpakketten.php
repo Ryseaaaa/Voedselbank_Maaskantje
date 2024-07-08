@@ -12,8 +12,43 @@
   
   include("common/navbar.php"); 
   include("login/loginvalidation.php");
+
+  if(isset($_GET["displaytype"])){
+    //first make sure theres a way to return
+    echo("<p><a href=\"voedselpakketten.php\">Terug naar keuzemenu</a></p>");
+
+    //then display requested display type
+    switch ($_GET["displaytype"]) {
+      case "displayKlanten":
+        include("voedselpakketten/displayklanten.php");
+        break;
+
+      case "displayVoedselpakketten":
+        include("voedselpakketten/displayvoedselpakketten.php");
+        break;
+
+      case "newVoedselpakket":
+        include("voedselpakketten/newvoedselpakket.php");
+        break;
+
+      case "addToVoedselpakket":
+        include("voedselpakketten/addtovoedselpakket.php");
+        break;
+
+      case "processing":
+        include("voedselpakketten/processing.php");
+        break;
+  
+
+      default:
+        header("location: voedselpakketten.php");
+        break;
+    }
+
+  }else{
+    include("voedselpakketten/ask.php");
+  }
   ?>
-  <div>voedsel</div>
   
 </body>
 </html>
