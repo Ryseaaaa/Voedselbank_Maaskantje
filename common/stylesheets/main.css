@@ -8,7 +8,6 @@
 }
 
 *{
-    font-family: cursive;
     box-sizing: padding-box;
 }
   
@@ -17,11 +16,11 @@ html {
 }
   
 body {
-    font-family: "Product Sans", sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1;
     font-weight: 400;
-    color: #171516;
-    background-color: whitesmoke;
+    color: whitesmoke;
+    background-color: #2b3c1a;
 }
 
 .grid {

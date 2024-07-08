@@ -1,7 +1,7 @@
 <form action="leveranciers.php?displaytype=processing" method="POST">
     Welke leverancier Wilt U Verwijderen:
 
-    <select name="user">
+    <select name="leverancier">
         <?php
         // sorry mika im stealing most of this cuz its late and i cant be fucked to find out everything sorry sorry
         include("database/dhb.php");
@@ -16,15 +16,15 @@
 
             //for each user property
             foreach($leverancier as $property => $value){
-                if($property == "UserID"){
+                if($property == "LeverancierID"){
                     echo("\"".$value."\">");
                 }
-                if($property == "Username"){
+                if($property == "Bedrijfsnaam"){
                     echo($value."</option>");
                 }
             }
         }
         ?>
     </select>
-    <input type="submit" value="Gebruiker Verwijderen" name="type">
+    <input type="submit" value="leverancier Verwijderen" name="type">
 </form>
