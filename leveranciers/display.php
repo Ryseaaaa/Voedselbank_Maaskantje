@@ -51,6 +51,7 @@
           echo("<td>".$value."</td>");
       }
       if($property == "VolgendeLevering"){
+        $value = substr($value,0,10);
           echo("<td>".$value."</td>");
       }
       
