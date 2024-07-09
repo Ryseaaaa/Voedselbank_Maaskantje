@@ -41,7 +41,7 @@
       if($property == "Adres"){
         echo("<td>".$value."</td>");
       }
-      if($property == "ConctactNaam"){
+      if($property == "ContactNaam"){
         echo("<td>".$value."</td>");
       }
       if($property == "Email"){
