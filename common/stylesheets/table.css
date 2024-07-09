@@ -1,0 +1,36 @@
+table {
+  border: 2px solid black;
+  border-spacing: 0px;
+}
+
+th {
+  padding: 5px;
+  border-bottom: 2px solid black;
+}
+
+td {
+  padding: 5px;
+  border-right: 2px solid black;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+tr:nth-child(even) {
+  background-color: #00000055;
+}
+
+table input {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: transparent;
+}
+
+table a {
+  border: none;
+  color: white;
+  background-color: transparent;
+}
