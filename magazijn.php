@@ -10,8 +10,6 @@
 <body>
 <?php
     session_start();
-    $currentPage = "magazijn";
-    include("login/loginvalidation.php");
     include("common/navbar.php");
     include("common/header.php");
 ?>
@@ -81,23 +79,71 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    </section>
-  </main>
 
-    <!-- script voor sorteren -->
-     <script>
-      document.querySelectorAll('.sort-dropdown').forEach(dropdown => {
-        dropdown.addEventListener('change', function() {
-          const sortOption = this.value;
-          const url = new URL(window.location.href);
-          if (sortOption === 'none') {
-            url.searchParams.delete('sort');
-          } else {
-          url.searchParams.set('sort', sortOption);
-          }
-          window.location.href = url.toString();
+    <!-- Script for sorting -->
+    <script>
+        document.querySelectorAll('.sort-dropdown').forEach(dropdown => {
+            dropdown.addEventListener('change', function() {
+                const sortOption = this.value;
+                const url = new URL(window.location.href);
+                if (sortOption === 'none') {
+                    url.searchParams.delete('sort');
+                } else {
+                    url.searchParams.set('sort', sortOption);
+                }
+                window.location.href = url.toString();
+            });
         });
-      });
-     </script>
+    </script>
+
+    <!-- Modal Structure for Editing Product -->
+    <div class="modal" id="editProductModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Product</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form id="editProductForm" action="Productbeheer/edit_product.php" method="post">
+                        <input type="hidden" id="editProductID" name="ProductID">
+                        <div class="form-group">
+                            <label for="editProductNaam">Product Naam:</label>
+                            <input type="text" class="form-control" id="editProductNaam" name="ProductNaam" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editAantal">Aantal:</label>
+                            <input type="text" class="form-control" id="editAantal" name="Aantal" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script to open the edit modal and populate it with data
+        function openEditModal(productId, productName, amount) {
+            document.getElementById('editProductID').value = productId;
+            document.getElementById('editProductNaam').value = productName;
+            document.getElementById('editAantal').value = amount;
+            $('#editProductModal').modal('show');
+        }
+
+        // Attach the openEditModal function to the edit buttons
+        document.querySelectorAll('.edit-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-id');
+                const productName = this.getAttribute('data-name');
+                const amount = this.getAttribute('data-amount');
+                openEditModal(productId, productName, amount);
+            });
+        });
+    </script>
+
+</main>
 </body>
 </html>
