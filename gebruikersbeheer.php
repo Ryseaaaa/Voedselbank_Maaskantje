@@ -27,8 +27,6 @@
   <?php
   session_start();
   $currentPage = "gebruikers";
-  include("./inlogCheck.php");
-
   include("login/loginvalidation.php");
   include("common/navbar.php");
   include("common/header.php");
@@ -55,6 +53,10 @@
 
       case "processing":
         include("gebruikersbeheer/processing.php");
+        break;
+
+      case "delete":
+        include("gebruikersbeheer/delete.php");
         break;
 
       case "edit":

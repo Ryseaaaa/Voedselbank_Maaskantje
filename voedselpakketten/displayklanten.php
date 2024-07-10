@@ -1,5 +1,6 @@
 <?php
   include("database/dhb.php");
+  require("login/loginvalidation.php");
 
   $query = "SELECT KlantID, GezinsNaam, AantalVolwassenen, AantalKinderen, AantalBabys, ExtraInformatie, max(DatumUitgifte) 
   FROM klant

@@ -2,6 +2,7 @@
 //include("../database/dhb.php");
 
 session_start();
+session_unset();
 
 print_r($_POST);
 
@@ -26,6 +27,7 @@ try {
 
     if(isset($ResultI[0]) && $ResultI[0]["Password"] == $_POST["pass"]) {
         $_SESSION["user"] = $_POST["username"];
+        $_SESSION["pass"] = $_POST["pass"];
         $_SESSION["role"] = $ResultI[0]["Role"];
         $_SESSION["loggedIn"] = true;
 
@@ -33,11 +35,6 @@ try {
         header("Location: ./index.php");
     } else {
         //header("Location:".$_SERVER["HTTP_REFERER"]);
-        print_r("it doesnt work");
-    }
-
-    if(isset($_GET["logout"])) {
-        header("Location:./index.php");
-        // $_SESSION = array();
-        session_destroy();
+        $_SESSION["error"] = "Login gegevens incorrect";
+        header("Location: TestInlog.php");
     }

@@ -1,8 +1,3 @@
-<?php
-session_start();
-$currentPage = "klanten";
-include("./inlogCheck.php");
-?>
 
 <form action="klanten.php?displaytype=processing" method="POST">
   Gezinsnaam: <input type="text" name="gezinsNaam">

@@ -2,6 +2,10 @@
   <ul class="nav-list">
     <li class="nav-item"><a href="index.php">Home</a></li>
       <?php
+      if (!isset($_SESSION["role"])){
+        $_SESSION["role"] = 0;
+      }
+
       if ($_SESSION["role"] == 3) {
           echo '<li class="nav-item"><a href="klanten.php">Klanten</a></li>
                 <li class="nav-item"><a href="leveranciers.php">Leveranciers</a></li>

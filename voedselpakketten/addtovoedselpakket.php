@@ -1,4 +1,5 @@
 <?php
+  require("login/loginvalidation.php");
   $voedselpakketid = $_GET["voedselpakketid"];
   include("database/dhb.php");
 

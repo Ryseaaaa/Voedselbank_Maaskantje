@@ -11,8 +11,6 @@
   session_start();
 
 $currentPage = "leveranciers";
-include("./inlogCheck.php");
-
   include("login/loginvalidation.php");
   include("common/navbar.php");
 

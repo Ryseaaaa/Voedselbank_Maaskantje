@@ -11,7 +11,7 @@
 <?php
     session_start();
     $currentPage = "magazijn";
-    include("./inlogCheck.php");
+    include("login/loginvalidation.php");
     include("common/navbar.php");
     include("common/header.php");
 ?>

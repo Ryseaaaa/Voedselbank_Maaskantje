@@ -1,20 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+</head>
+<body>
+        <?php
+                session_start();
+                include("common/navbar.php");
+                include("common/styles.php");
+                if (!isset($_SESSION["loggedIn"])) { $_SESSION["loggedIn"] = false;}
 
-<?php
-session_start();
-        include("common/navbar.php");
-        include("common/styles.php");
-        if($_SESSION["loggedIn"] != true){
-          header("location: account.php");
-        }
+                if( $_SESSION["loggedIn"] != true){
+                        include("login/loginform.php");
+                }else{
+                        //check if login is correct
+                        include("login/loginvalidation.php");
 
-echo '
-<form action="response.php" method="POST" class="inlogForm">
-        <label for="name"><b>Username</b></label> <br>
-        <input type="username" name="username" placeholder="username:" required class="inputField"> <br>
+                        //check for get request
+                        if(!isset($_GET["display"])){
+                                //if no display type, set to default
+                                $_GET["display"] = "default";
+                        }
 
-        <label for="pass"><b>Password</b></label> <br>
-        <input type="password" name="pass" placeholder="password:" required class="inputField"> <br>
+                        //switch for display type
+                        switch ($_GET["display"]) {
+                                case 'changepassword':
+                                        include("login/changepassword.php");
+                                        break;
 
-        <input type="submit" value="login" class="submitBTN">
-    </form>
-    ';
+                                case 'logout':
+                                        session_unset();
+                                        session_destroy();
+                                        header("location: TestInlog.php");
+                                        break;
+                                
+                                default:
+                                        include("login/account.php");
+                                        break;
+                        }
+                        
+                }
+        ?>
+        
+</body>
+</html>
+

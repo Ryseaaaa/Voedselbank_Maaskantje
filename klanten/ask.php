@@ -1,6 +1,5 @@
 <?php
 $currentPage = "klanten";
-include("inlogCheck.php");
 ?>
 
 <form action="klanten.php" method="GET">

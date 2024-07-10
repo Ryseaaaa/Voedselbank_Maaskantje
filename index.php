@@ -10,7 +10,6 @@
 <?php
         session_start();
         include("common/navbar.php");
-        include("login/loginvalidation.php");
 ?>
   <header class="header">
     <div class="header-container">

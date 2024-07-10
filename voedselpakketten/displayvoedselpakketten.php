@@ -1,4 +1,6 @@
 <?php
+  require("login/loginvalidation.php");
+  
   $query = "SELECT VoedselpakketID, GezinsNaam, DatumCreatie, DatumUitgifte
   FROM voedselpakket LEFT JOIN klant ON KlantFID = KlantID
   WHERE isGedeactiveerd = 0";

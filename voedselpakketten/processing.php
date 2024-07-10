@@ -1,4 +1,6 @@
 <?php
+require("login/loginvalidation.php");
+
 if(isset($_GET["processingtype"])){
   $_POST = $_GET;
 }
