@@ -1,5 +1,11 @@
 <?php
-  //Determine what to do
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+$currentPage = "klanten";
+require("inlogCheck.php");
+
+//Determine what to do
   switch ($_POST["type"]) {
     case "Klant Toevoegen":
       addKlant();
@@ -100,11 +106,5 @@
     } catch (Exception $e) {
       echo($e);
     }
-    
-
-
-
   }
-  
-
 ?>

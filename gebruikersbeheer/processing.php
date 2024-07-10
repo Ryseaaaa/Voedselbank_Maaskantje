@@ -1,4 +1,10 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+$currentPage = "klanten";
+require("inlogCheck.php");
+
   //Determine what to do
   switch ($_POST["type"]) {
     case "Gebruiker Toevoegen":
@@ -100,5 +106,4 @@
       exit;
     }
   }
-
 ?>

@@ -1,4 +1,9 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+$currentPage = "klanten";
+require("inlogCheck.php");
   //include dhb
   
 
@@ -66,6 +71,4 @@
     echo("yay?");
 
   }
-  
-
 ?>

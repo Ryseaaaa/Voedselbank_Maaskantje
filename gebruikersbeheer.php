@@ -26,6 +26,9 @@
 <body>
   <?php
   session_start();
+  $currentPage = "gebruikers";
+  include("./inlogCheck.php");
+
   include("login/loginvalidation.php");
   include("common/navbar.php");
   include("common/header.php");
@@ -69,8 +72,6 @@
   }
   ?>
   </div>
-
   <?php include("common/footer.php"); ?>
-
 </body>
 </html>

@@ -28,7 +28,7 @@
                 <p class="short-description">
                 Klik hier om in te loggen.
                 </p>
-                <a href="account.php" class="btn btn--outline">Login &rarr;</a>
+                <a href="TestInlog.php" class="btn btn--outline">Login &rarr;</a>
             </div>
         </div>
     </section>
