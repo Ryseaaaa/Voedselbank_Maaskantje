@@ -12,9 +12,9 @@ if ($conn->connect_error) {
 }
 
 $sort = isset($_GET['sort']) ? $_GET['sort'] : 'none';
-$sortBy = ""; // Default sort is empty
+$sortBy = ""; // Default sort is leeg
 
-// Categories array
+// Category array
 $categories = [
     1 => 'AGF',
     2 => 'Kaas, Vleeswaren',
@@ -49,11 +49,11 @@ foreach ($categories as $id => $name) {
             $sortBy = "ProductID";
             break;
         default:
-            $sortBy = ""; // Default = no sort
+            $sortBy = ""; // Default is geen sort
             break;
     }
 
-    $sql = "SELECT ProductNaam, Aantal, ProductID FROM product WHERE CatogorieFID=$id";
+    $sql = "SELECT ProductID, ProductNaam, Aantal FROM product WHERE CatogorieFID=$id";
     if ($sortBy != "") {
         $sql .= " ORDER BY $sortBy";
     }
@@ -61,8 +61,11 @@ foreach ($categories as $id => $name) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<li>" . $row["ProductNaam"] . ": " . $row["Aantal"] . " (EAN: " . $row["ProductID"] . ")</li>";
+        while($row = $result->fetch_assoc()) {
+            echo "<li>";
+            echo $row["ProductNaam"] . ": " . $row["Aantal"] . " (EAN: " . $row["ProductID"] . ")";
+            echo " <button class='btn btn-secondary edit-button' data-id='" . $row["ProductID"] . "' data-name='" . $row["ProductNaam"] . "' data-amount='" . $row["Aantal"] . "'>Edit</button>";
+            echo "</li>";
         }
     } else {
         echo "<li>No products found</li>";

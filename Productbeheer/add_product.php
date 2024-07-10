@@ -16,33 +16,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $productID = $_POST['ProductID'];
     $productName = $_POST['ProductNaam'];
     $amount = $_POST['Aantal'];
-    $catogoryFID = $_POST['CatogorieFID'];
+    $categoryFID = $_POST['CatogorieFID'];
 
-    $sql = "INSERT INTO product (ProductID, ProductNaam, Aantal, CatogorieFID) VALUES (?, ?, ?, ?)";
+    // Check if product already exists
+    $checkSql = "SELECT * FROM Product WHERE ProductID = ?";
+    if ($stmt = $conn->prepare($checkSql)) {
+        $stmt->bind_param("s", $productID);
+        $stmt->execute();
+        $stmt->store_result();
+        if ($stmt->num_rows > 0) {
+            // Product already exists
+            $stmt->close();
+            echo "<script>alert('Product bestaat al'); window.location.href='../magazijn.php';</script>";
+            exit();
+        }
+        $stmt->close();
+    }
 
-    // Prepare and bind
+    // Product does not exist, proceed with insertion
+    $sql = "INSERT INTO Product (ProductID, ProductNaam, Aantal, CatogorieFID) VALUES (?, ?, ?, ?)";
+
     if ($stmt = $conn->prepare($sql)) {
-        // "i" stands for integer, "s" stands for string
-        $stmt->bind_param("issi", $productID, $productName, $amount, $catogoryFID);
-
-        // Execute statement
+        $stmt->bind_param("ssii", $productID, $productName, $amount, $categoryFID);
         if ($stmt->execute()) {
-            // Redirect to the page with the form
             header("Location: ../magazijn.php");
         } else {
             echo "Error: " . $stmt->error;
         }
-
-        // Close statement
         $stmt->close();
     } else {
         echo "Error: " . $conn->error;
     }
 
-    // Close connection
     $conn->close();
 } else {
-    // If the request method is not POST, redirect to the form page
     header("Location: ../magazijn.php");
 }
 ?>
