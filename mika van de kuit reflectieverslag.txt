@@ -1,0 +1,32 @@
+Reflectieverslag Eindexamenproject Voedselbank Maaskantje
+Naam: Mika van de Kuit 
+Studentnummer: 2187145
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Wat was mijn taak?
+
+Het project begon met alleen Yuri en ik. Wij hadden besproken dat ik vooral de backend zou doen, en Yuri de frontend. Een week later had Piet redelijk onverwachts besloten dat Shahferoz met ons project mee zou doen. De communicatie viel toen uit elkaar. Ik merkte dat er niet veel zou gebeuren met hoe de communicatie toen verliep, dus ik besloot toen voor mijzelf om ook een soort groepsleider rol aan te nemen.
+----------------
+Wat ging goed?
+
+Qua programmeren verliep alles soepel. Ik heb de ERD gemaakt, een groot deel van de backend gedaan, veel bugfixing gedaan, en ook op sommige momenten mijn teamleden geholpen en meegedacht met hun taken. Ook het opstellen van een GitHub repository en GitHub Projects team heb ik zelf gedaan.
+Dit was een hele zware periode in mijn leven. In de tijd dat dit project bezig was, is mijn opa gediagnosticeerd met kanker en er aan overleden. Ik vind dat ik trots op mijzelf mag zijn dat ik ondanks dat, hard doorgewerkt heb aan dit project.
+----------------
+Wat kon beter?
+
+Communicatie, samenwerking, en leiderschap. 
+Ik had het mijn doel gemaakt om meer leiderschap aan te nemen, maar dat ging niet zo goed als ik zelf had gewenst. Ik ben best introvert, dus communicatie is voor mij een groot zwaktepunt. Juist daarom wil ik daar graag in verbeteren. Ik heb wel op momenten contact opgenomen met mijn teamleden, maar dat had zowel frequenter als soepeler gemogen. Vooral met Shahferoz, die ik voor dit project niet kende. 
+Ik heb niet goed genoeg besproken en gedocumenteerd wat mijn plan was voor de opstelling van de bestandstructuur. Ik heb geprobeerd suggesties te geven voor wat mijn teamleden konden doen, maar ik denk dat ik dit niet duidelijk en specifiek genoeg heb aangegeven. 
+Ik heb het gevoel dat het voor de rest van het team onduidelijk was welke taken ze aan konden nemen, en ik voel mij daar gedeeltelijk verantwoordelijk voor. Ik heb te veel taken op mezelf genomen, omdat het makkelijker is om te geloven dat ik zelf goede code kan schrijven dan om te geloven in mijn teamleden. Als mijn teamleden zich zo voelden, hadden ze dat natuurlijk met mij moeten communiceren, maar dat verandert niet dat ik het zelf ook beter had kunnen en moeten aanpakken.
+De volgende keer zal ik proberen meer bewust te zijn van de communicatie binnen het team en proberen meer initiatief te nemen om communicatie op gang te krijgen. Ook zal ik proberen meer in mijn teamleden te geloven en te vertrouwen.
+
+Planning en voortgangsbewaking.
+Planning is voor mij ook een groot zwaktepunt. Ik heb voor het eerst gewerkt met userstories en GitHub Projects, om een overzicht te krijgen van welke taken en doelen nog behaalt moeten worden. Dat is voor mij al een grote verbetering met hoe ik voorheen tewerk ging. Ik heb alleen geen planning gemaakt voor welke taken wanneer af moesten zijn, of gebruik gemaakt van de Iteration en Roadmap functionaliteit van GitHub Projects. 
+Niet alle userstories zijn af. Ik vind dat ik zelf voldoende werk heb verricht, maar plannen is alsnog een belangrijke vaardigheid om te hebben. 
+Om terug te komen op leiderschap, mijn teamleden hadden meer werk kunnen verrichten als ik zelf het initiatief had genomen om een planning te maken en vaker als team had besproken waar wij individueel mee bezig waren. 
+Een projectmanagementmethode als Scrum had handig geweest en zal ik de volgende keer toepassen. Ik wil beter kunnen plannen en leren de voortgang bespreken met mijn team.
+----------------
+Conclusie
+Ik ben tevreden over hoe het project is verlopen. Niet alles is volledig af, en er zijn zeker verbeterpunten, maar ondanks mijn persoonlijke situatie heb ik hard gewerkt en heb ik er het beste van kunnen maken en daar ben ik trots op.
+De volgende keer zal ik meer aandacht besteden aan communiceren en overleggen met mijn team, niet alleen wanneer ik niet weet wat ik moet doen, maar ook wanneer het lijkt alsof mijn teamleden niet weten wat ze moeten doen. Ook zal ik meer aandacht besteden aan plannen, en de voortgang bespreken met mijn team, o.a. door scrum toe te passen.
