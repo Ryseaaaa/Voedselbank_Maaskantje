@@ -9,7 +9,6 @@
 <body>
 <?php
   session_start();
-
   $currentPage = "klanten";
   include("./inlogCheck.php");
 

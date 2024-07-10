@@ -70,6 +70,4 @@ require("inlogCheck.php");
     echo("yay?");
 
   }
-  
-
 ?>

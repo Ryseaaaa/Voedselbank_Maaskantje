@@ -104,5 +104,4 @@ require("inlogCheck.php");
       exit;
     }
   }
-
 ?>

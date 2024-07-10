@@ -16,9 +16,7 @@
           echo '<li class="nav-item"><a href="magazijn.php">Magazijn</a></li>';
       }
       ?>
-
-
-
+      
     <li class="nav-item"><a href="account.php">Account</a></li>
   </ul>
 

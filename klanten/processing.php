@@ -105,11 +105,5 @@ require("inlogCheck.php");
     } catch (Exception $e) {
       echo($e);
     }
-    
-
-
-
   }
-  
-
 ?>

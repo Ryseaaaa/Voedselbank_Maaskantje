@@ -82,7 +82,6 @@ include("./inlogCheck.php");
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </section>
   </main>
-
     <!-- script voor sorteren -->
      <script>
       document.querySelectorAll('.sort-dropdown').forEach(dropdown => {
