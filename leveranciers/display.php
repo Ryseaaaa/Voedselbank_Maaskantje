@@ -1,8 +1,6 @@
 <?php
 //should come with search function using get
 
-  echo("display");
-
   include("database/dhb.php");
   //list password
   $query = "SELECT * FROM `leverancier`";
