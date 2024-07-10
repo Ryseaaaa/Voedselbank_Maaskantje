@@ -14,5 +14,5 @@ echo '
         <input type="password" name="pass" placeholder="password:" required class="inputField"> <br>
 
         <input type="submit" value="login" class="submitBTN">
-    </form>
+    </form> 
     ';
