@@ -13,12 +13,7 @@ if(!
         isset($_SESSION["pass"])
     )
 ){
-    session_unset();
-    session_destroy();
-    session_start();
-    $_SESSION["error"] = "U bent niet ingelogd";
-    header("location: TestInlog.php");
-    exit();
+    destroysession();
 }
 
 if (!isset($_SESSION["role"])){
@@ -35,22 +30,38 @@ switch ($currentPage) {
     case "leveranciers";
     case "gebruikers";
         if ($role == 1 || $role == 2) {
+            $_SESSION["error"] = "U heeft niet de juiste machtigingen";
             header("Location: index.php");
         }
         break;
     case "magazijn";
         if ($role == 2) {
+            $_SESSION["error"] = "U heeft niet de juiste machtigingen";
             header("Location: index.php");
         }
         break;
     case "voedselpaketten";
         if ($role == 1) {
+            $_SESSION["error"] = "U heeft niet de juiste machtigingen";
             header("Location: index.php");
         }
         break;
-    default:
-        header("Location: index.php");
+
+    case "login";
+    case "index";
         break;
+    default:
+        destroysession();
+        break;
+}
+
+function destroysession(){
+    session_unset();
+    session_destroy();
+    session_start();
+    $_SESSION["error"] = "U bent niet ingelogd";
+    header("location: TestInlog.php");
+    exit();
 }
 
 //needs to include permission validation too

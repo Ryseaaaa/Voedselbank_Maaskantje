@@ -60,6 +60,7 @@ body {
   font-weight: 500;
   color: #fd9735;
   letter-spacing: -0.5px;
+  text-shadow: 0px 0px 5px #000000aa;
 }
 
 .heading-primary {
@@ -178,13 +179,15 @@ strong {
 .section-main {
   background-color: #2b3c1a;
   padding: 4.8rem 0 9.6rem 0;
+  padding-top: 0px;
 }
 
 .about-us {
   height: 75rem;
-  max-width: 135rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 0;
+  padding: 50px 3.2rem;
   /* display: grid;
     grid-template-columns: 1fr 1fr; */
   gap: 9.6rem;
@@ -197,14 +200,26 @@ strong {
 }
 
 .about-us-text-box {
-  padding: 9.6rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 5.6rem;
+  border: 3px solid black;
+  border-radius: 15px;
+  backdrop-filter: blur(7px) brightness(80%) saturate(50%);
+  box-shadow: 2px 2px 2px #000000aa;
 }
 
 .short-description {
   font-size: 2rem;
   line-height: 1.6;
   margin-bottom: 4.8rem;
-  color: black;
+  color: white;
+  text-shadow: 0px 0px 5px #000000aa;
 }
 
 /****************************/

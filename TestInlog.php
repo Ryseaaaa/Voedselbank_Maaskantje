@@ -8,12 +8,15 @@
 <body>
         <?php
                 session_start();
+                $currentPage = "login";
+
                 include("common/navbar.php");
                 include("common/styles.php");
                 if (!isset($_SESSION["loggedIn"])) { $_SESSION["loggedIn"] = false;}
 
                 if( $_SESSION["loggedIn"] != true){
                         include("login/loginform.php");
+                        unset($_SESSION["error"]);
                 }else{
                         //check if login is correct
                         include("login/loginvalidation.php");

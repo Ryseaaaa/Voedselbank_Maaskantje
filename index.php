@@ -24,10 +24,20 @@
                 <h1 class="heading-primary">
                 Welkom bij Voedselbank Maaskantje!
                 </h1>
-                <p class="short-description">
-                Klik hier om in te loggen.
-                </p>
-                <a href="TestInlog.php" class="btn btn--outline">Login &rarr;</a>
+                <?php
+                  $currentPage = "index";
+                  if (!(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"])){
+                    echo "<p class=\"short-description\">
+                    Klik hier om in te loggen.
+                    </p>
+                    <a href=\"TestInlog.php\" class=\"btn btn--outline\">Login &rarr;</a>";
+                  }else{
+                    include("login/loginvalidation.php");
+                    include("functions.php");
+                    echo "<p class=\"short-description\">U bent ingelogd als ".$_SESSION["user"]." met rol ".roletostring($_SESSION["role"]).".</p>";
+                  }
+                ?>
+                
             </div>
         </div>
     </section>
