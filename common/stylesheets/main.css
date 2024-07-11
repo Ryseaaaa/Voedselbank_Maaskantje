@@ -267,7 +267,7 @@ strong {
 /*}*/
 
 label {
-  color: #ffe38f;
+  color: #634b03;
   font-size: 18px;
   padding: 10px;
 }
@@ -321,7 +321,7 @@ span.forgot-psw {
 }
 
 .section-magazijn {
-  background-color: #405031;
+  background-color: #9fa98a;
   padding: 4.8rem 0 9.6rem 0;
   color: #171516;
 }
@@ -329,7 +329,7 @@ span.forgot-psw {
 .container-list {
   margin-left: 20px;
   display: inline-block;
-  border: 3px solid #ffe083;
+  border: 3px solid #765f19;
   padding: 2.5rem 4rem 2.5rem 4rem;
 }
 
@@ -403,7 +403,7 @@ span.forgot-psw {
 }
 
 .category-box {
-  border: 2px solid #f0e68c;
+  border: 2px solid #765f19;
   padding: 20px;
   margin: 20px 0;
 }
